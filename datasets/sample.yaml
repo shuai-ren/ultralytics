@@ -1,0 +1,8 @@
+path: /workspace/datasets/sample
+train: images/train
+val: images/train
+test: # test images (optional)
+
+# Classes
+names:
+  0: person
