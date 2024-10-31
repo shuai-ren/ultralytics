@@ -16,6 +16,11 @@ for dir in "${dirs[@]}"; do
   mkdir "$dir"
 done
 
+if [ -d "train" ]; then
+  echo "路径 train 存在. 已删除..."
+  rm -rf "train"  # 删除目录及其内容
+fi
+
 # 目标文件夹路径
 destination="temp"
 
@@ -41,5 +46,6 @@ mv train images
 python3 general_json2yolo.py
 
 #rm annotations.json
+python3 create_val_set.py
 
 echo "数据集制作完成."
